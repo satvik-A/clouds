@@ -1,0 +1,470 @@
+========================================================
+CLOUDFS — FINAL DESIGN PLAN & DECISION SPECIFICATION
+========================================================
+
+This document defines the COMPLETE design, constraints, operational semantics,
+and non-negotiable decisions for CloudFS.
+
+CloudFS is a provider-agnostic, policy-driven cloud storage control plane.
+This document is the SINGLE SOURCE OF TRUTH for design correctness.
+
+--------------------------------------------------------
+SECTION 0 — DEFINITIONS
+--------------------------------------------------------
+
+• “Index” = the encrypted SQLite metadata database
+• “Authoritative writer” = macOS client only
+• “Backend / Provider” = any storage account (Drive, S3, WebDAV, etc.)
+• “Hydration” = downloading real file data
+• “Placeholder” = metadata-only file representation
+• “Explicit intent” = a user action that explicitly authorizes hydration
+• “Version” = immutable atomic unit of data
+• “Snapshot” = a named reference to a set of versions
+• “Archive” = compressed + parity-protected immutable bundle
+
+--------------------------------------------------------
+SECTION 1 — CORE GOALS (LOCKED)
+--------------------------------------------------------
+
+1. Metadata is the source of truth.
+2. Filesystem is a projection of metadata.
+3. Cloud providers are interchangeable plugins.
+4. No proprietary formats or lock-in.
+5. Manual recovery must always be possible.
+6. No silent deletion or migration.
+7. No background daemon by default.
+8. Explicit intent only for data download.
+9. Speed prioritized where safe.
+10. Correctness prioritized everywhere else.
+
+--------------------------------------------------------
+SECTION 2 — PLATFORM & AUTHORITY MODEL (LOCKED)
+--------------------------------------------------------
+
+• macOS client:
+  - The ONLY authoritative writer.
+  - Executes all mutations.
+  - Owns encryption keys.
+  - Runs all heavy workflows.
+
+• Android / iOS:
+  - Read-only access to index.
+  - May submit INTENT REQUESTS only.
+  - Never mutate index directly.
+  - Never hold master encryption keys.
+
+• Web app:
+  - Observability and staged control only.
+  - Writes intent requests, not commits.
+
+Single-writer model is NON-NEGOTIABLE.
+
+--------------------------------------------------------
+SECTION 3 — METADATA INDEX (LOCKED)
+--------------------------------------------------------
+
+Index properties:
+• SQLite
+• Encrypted at rest
+• Signed for tamper detection
+• Stored in PRIMARY provider (default Google Drive)
+• Snapshotted daily
+• Backed up to secondary providers
+
+Index contains:
+• Logical path tree
+• File type
+• Logical size
+• Physical size
+• Parity size
+• Version graph
+• Snapshot membership
+• Policies
+• Classifications
+• Cache state
+• Hydration state
+• Backend placement
+• Chunk mapping
+• Replication state
+• Health metrics
+• Cost metrics
+
+Filesystem NEVER drives index updates.
+Index ALWAYS drives filesystem state.
+
+--------------------------------------------------------
+SECTION 4 — CONSISTENCY MODEL (LOCKED)
+--------------------------------------------------------
+
+Consistency is:
+• Single-writer
+• Eventually consistent
+
+Each operation transitions:
+LOCAL → COMMITTED → SYNCED
+
+LOCAL:
+• Cache + index updated
+
+COMMITTED:
+• Index snapshot taken
+
+SYNCED:
+• Backend upload verified
+
+Failures NEVER skip states.
+
+--------------------------------------------------------
+SECTION 5 — CONFLICT RESOLUTION (LOCKED)
+--------------------------------------------------------
+
+If index and filesystem disagree:
+• Index wins ALWAYS
+
+Resolution rules:
+• FS missing → recreate placeholder
+• Index missing → quarantine + prompt user
+• Backend mismatch → mark DEGRADED
+
+No automatic destructive reconciliation.
+
+--------------------------------------------------------
+SECTION 6 — ATOMICITY (LOCKED)
+--------------------------------------------------------
+
+Atomic unit = VERSION
+
+Rules:
+• Versions are immutable
+• Partial uploads are never visible
+• Archives/chunks belong to a version group
+• Incomplete versions remain INCOMPLETE
+• Only verified versions become ACTIVE
+
+--------------------------------------------------------
+SECTION 7 — FAILURE HANDLING (LOCKED)
+--------------------------------------------------------
+
+Crash handling:
+• Write-ahead journal for every operation
+• Resume or rollback on restart
+
+API failures:
+• Exponential backoff
+• Operation queue
+• No daemon required
+
+Backend failure:
+• Backend marked HEALTHY / DEGRADED / UNAVAILABLE
+• Health score reflects degradation
+• LAST-RESORT behavior:
+  - If health < threshold
+  - Prompt user
+  - Duplicate data to another backend
+  - Increase availability score
+
+--------------------------------------------------------
+SECTION 8 — STORAGE PROVIDERS & PLUGINS (LOCKED)
+--------------------------------------------------------
+
+Providers are PLUGINS.
+
+Each plugin must implement:
+• init
+• capabilities
+• get_usage
+• upload
+• download
+• delete
+• verify
+
+No provider-specific logic in core.
+
+rclone is reference implementation only.
+
+--------------------------------------------------------
+SECTION 9 — ACCOUNT-LEVEL POLICIES (LOCKED)
+--------------------------------------------------------
+
+Each account defines:
+• Capabilities (chunk size, versioning support, etc.)
+• Preferences (hot data allowed, archive-only, priority)
+• Soft limit
+• Hard limit
+• Required properties (e.g. encryption mandatory)
+
+Account policies override file placement.
+
+--------------------------------------------------------
+SECTION 10 — PLACEMENT & COST GUARDRAILS (LOCKED)
+--------------------------------------------------------
+
+Before any upload:
+• Check soft/hard limits
+• Check encryption requirements
+• Check backend capabilities
+
+If data does NOT fit:
+User is prompted to:
+1. Choose another provider
+2. Override limits
+3. Chunk & distribute
+4. Abort
+
+No silent decisions allowed.
+
+--------------------------------------------------------
+SECTION 11 — ENCRYPTION (LOCKED)
+--------------------------------------------------------
+
+Encryption is POLICY-ENFORCED.
+
+Pipeline:
+Version → Compress → Encrypt → Chunk → Upload
+
+Rules:
+• If ANY policy requires encryption → encrypt
+• Keys stored in macOS Keychain
+• Recovery bundle:
+  - Password protected
+  - Stored in primary provider
+  - Manually accessible
+• No proprietary crypto
+• Speed prioritized
+
+--------------------------------------------------------
+SECTION 12 — CACHE SYSTEM (LOCKED)
+--------------------------------------------------------
+
+Cache rules:
+• Persistent
+• No auto eviction
+• Overwritten only on re-download
+• Deleted only explicitly
+
+If cache disk is full:
+1. Prompt user
+2. If auto-clean enabled:
+   - Rank cache entries by:
+     • last accessed
+     • cache policy
+     • hydration cost
+   - Evict optimal candidate
+
+--------------------------------------------------------
+SECTION 13 — CACHE UI (LOCKED)
+--------------------------------------------------------
+
+Provide standalone TUI:
+• List cached
+• List pinned
+• List stale
+• Manual eviction
+• No daemon
+
+--------------------------------------------------------
+SECTION 14 — PLACEHOLDERS & HYDRATION (LOCKED)
+--------------------------------------------------------
+
+Files appear as PLACEHOLDERS:
+• Correct name
+• Correct size
+• Thumbnail/icon
+• NO data bytes
+
+Hydration allowed ONLY via:
+• CLI command
+• Context menu
+• App request
+
+Quick Look, Finder previews, indexing NEVER hydrate.
+
+Hydration must be:
+• Visible
+• Cancelable
+• Multi-threaded
+• Serialized per file
+
+--------------------------------------------------------
+SECTION 15 — VERSIONING & TRASH (LOCKED)
+--------------------------------------------------------
+
+Versioning:
+• Aggressive for text/code/PDF
+• Minimal for media/archives
+
+Old versions:
+• If uploaded → keep
+• Else → keep in cache, delete when space needed
+
+Trash:
+• Deletions go to trash
+• Trash cleared ONLY when space required
+• Uses same ranking logic as cache eviction
+
+--------------------------------------------------------
+SECTION 16 — SNAPSHOTS & RESTORE (LOCKED)
+--------------------------------------------------------
+
+Snapshots:
+• Reference versions only
+• No data duplication
+
+Restore options:
+• Overwrite
+• Restore as copy
+• Read-only snapshot mount
+
+Always prompt user.
+
+--------------------------------------------------------
+SECTION 17 — COLD DATA ARCHIVAL (LOCKED)
+--------------------------------------------------------
+
+Cold data pipeline:
+• 7z compression
+• PAR2 parity
+• Chunking
+• Encryption
+
+Archives:
+• Immutable
+• Any change → new archive version
+
+Each provider stores:
+• Human-readable manifest
+• Chunk list
+• Replica locations
+
+Manual recovery MUST be possible without CloudFS.
+
+--------------------------------------------------------
+SECTION 18 — HEALTH SCORING (LOCKED)
+--------------------------------------------------------
+
+Health score is COMPUTED.
+
+Inputs:
+• Replication count
+• Verification freshness
+• Parity availability
+• Backend health
+• Index consistency
+
+If health < threshold:
+• Prompt user
+• LAST-RESORT replication
+
+--------------------------------------------------------
+SECTION 19 — SEARCH (LOCKED)
+--------------------------------------------------------
+
+Index-only search:
+• Path
+• Size
+• Age
+• Classification
+• Health
+• Cache state
+• Provider
+• Policy
+
+Search NEVER hydrates data.
+
+--------------------------------------------------------
+SECTION 20 — LIFECYCLE AUTOMATION (LOCKED)
+--------------------------------------------------------
+
+User-triggered ONLY.
+
+Transitions:
+HOT → WARM → COLD → ARCHIVE
+
+Execution:
+• Dry run
+• Summary
+• Confirmation
+
+--------------------------------------------------------
+SECTION 21 — MULTI-DEVICE REQUEST QUEUE (LOCKED)
+--------------------------------------------------------
+
+Non-macOS devices:
+• Write intent JSON files:
+  - hydrate
+  - upload
+  - policy change
+  - restore
+
+macOS:
+• Validates
+• Executes
+• Updates index
+• Records outcome
+
+--------------------------------------------------------
+SECTION 22 — INDEX INTEGRITY (LOCKED)
+--------------------------------------------------------
+
+After EVERY operation:
+• Validate index
+• Cross-check:
+  - cache
+  - provider index
+  - version graph
+
+Daily snapshots mandatory.
+
+--------------------------------------------------------
+SECTION 23 — BOOTSTRAP & DISASTER RECOVERY (LOCKED)
+--------------------------------------------------------
+
+New device onboarding:
+• Password-gated permission grant
+• Read-only by default
+• Explicit promotion
+
+Disaster recovery:
+• Provider-level metadata files
+• Index snapshots
+• Chunk manifests
+• No proprietary formats
+• Manual reconstruction possible
+
+--------------------------------------------------------
+SECTION 24 — EXPLICIT NON-GOALS (LOCKED)
+--------------------------------------------------------
+
+CloudFS will NOT:
+• Support multi-user writes
+• Do real-time sync
+• Run kernel filesystem drivers
+• Depend on server-side compute
+• Perform AI automation
+
+--------------------------------------------------------
+SECTION 25 — BUILD PHASES (LOCKED)
+--------------------------------------------------------
+
+Phase 1:
+• macOS core
+• Index
+• Provider plugins
+• Cache & hydration
+• CLI
+
+Phase 2:
+• Archival
+• Health scoring
+• Lifecycle
+• Search
+• Cost guardrails
+
+Phase 3:
+• Web dashboard
+• Mobile apps
+• UX polish
+
+--------------------------------------------------------
+END OF DESIGN PLAN
+--------------------------------------------------------de
