@@ -1,0 +1,1093 @@
+# Global AI Landscape Taxonomy (Index Only)
+
+***
+
+## I. AI THEORETICAL PARADIGMS
+
+1. Symbolic / Logic-Based AI (Good Old-Fashioned AI, GOFAI)
+   1.1 Logicist paradigm
+   1.2 Knowledge representation and reasoning (KRR)
+   1.3 Logic programming
+   1.4 Automated theorem proving
+   1.5 Rule-based systems (production systems)
+   1.6 Expert systems
+   1.7 Frame systems and semantic networks
+   1.8 Constraint-based reasoning and constraint satisfaction problems (CSPs)[1][2]
+   1.9 Description logics and ontological reasoning
+   1.10 Planning-as-search / state-space search paradigm[3][4][5]
+
+2. Connectionist / Neural Computation Paradigm
+   2.1 Artificial neural networks (ANNs)
+   2.2 Distributed representations
+   2.3 Parallel distributed processing
+   2.4 Deep learning paradigm
+   2.5 Neuromorphic computing (spiking neural networks)
+   2.6 Energy-based neural models (Hopfield networks, Boltzmann machines)
+
+3. Probabilistic / Bayesian Paradigm
+   3.1 Bayesian networks (belief networks)
+   3.2 Markov networks (Markov random fields)
+   3.3 Dynamic Bayesian networks (DBNs)
+   3.4 Probabilistic graphical models (PGMs)
+   3.5 Bayesian decision theory
+   3.6 Probabilistic programming
+   3.7 Causal graphical models and causal inference
+   3.8 Uncertain reasoning and approximate inference paradigms (MCMC, variational inference)
+
+4. Statistical Learning Theory Paradigm
+   4.1 PAC learning
+   4.2 VC theory and capacity control
+   4.3 Structural risk minimization
+   4.4 Kernel methods and reproducing kernel Hilbert spaces
+   4.5 Regularization theory
+
+5. Decision-Theoretic AI Paradigm
+   5.1 Markov decision processes (MDPs)
+   5.2 Partially observable MDPs (POMDPs)
+   5.3 Stochastic optimal control
+   5.4 Game-theoretic AI (normal-form, extensive-form, stochastic games)
+   5.5 Decision-theoretic planning
+   5.6 Multi-criteria and risk-sensitive decision making
+
+6. Evolutionary Computation & Bio-Inspired Paradigms
+   6.1 Genetic algorithms (GAs)
+   6.2 Genetic programming (GP)
+   6.3 Evolution strategies (ES)
+   6.4 Differential evolution
+   6.5 Swarm intelligence (ant colony optimization, particle swarm optimization, bee algorithms)
+   6.6 Artificial immune systems
+   6.7 Memetic algorithms
+   6.8 Co-evolutionary algorithms
+
+7. Cybernetics & Control-Theoretic Paradigms
+   7.1 Classical control (PID, LQG)
+   7.2 Optimal control and dynamic programming
+   7.3 Adaptive control
+   7.4 Model predictive control (MPC)
+   7.5 Reinforcement learning as adaptive/approximate optimal control[6][7]
+
+8. Embodied, Situated, and Enactive AI Paradigms
+   8.1 Embodied cognition
+   8.2 Situated agents
+   8.3 Enactive AI
+   8.4 Behavior-based robotics (subsumption architecture)
+   8.5 Ecological / affordance-based approaches
+
+9. Hybrid Neuro-Symbolic & Neuro-Semantic Paradigms
+   9.1 Symbolic knowledge on neural representations
+   9.2 Differentiable logic and differentiable programming
+   9.3 Neural theorem proving and neural symbolic machines
+   9.4 Knowledge-augmented neural networks
+   9.5 Neuro-symbolic concept learners
+
+10. Algorithmic Information & Universal Induction Paradigms
+    10.1 Solomonoff induction
+    10.2 AIXI and universal agents
+    10.3 Minimum description length (MDL)
+    10.4 Kolmogorov complexity–based reasoning
+
+11. Multi-Agent, Distributed & Collective Intelligence Paradigms
+    11.1 Distributed artificial intelligence (DAI)[8]
+    11.2 Multi-agent systems (MAS)
+    11.3 Swarm intelligence and stigmergic systems
+    11.4 Market-based and mechanism design–based AI
+
+12. Foundation Model & Pretrained Representation Paradigm
+    12.1 Foundation models (FMs) and large language models (LLMs)[9][10]
+    12.2 Multimodal foundation models (vision-language, video, audio, 3D)[11][12][13][14][15]
+    12.3 Task-agnostic pretraining with task-specific adaptation
+    12.4 Instruction-tuned and alignment-tuned models
+    12.5 Unified sequence modeling / tokenization across modalities (multimodal tokens, discrete codes)[16][17]
+
+13. Data-Centric & Systems-Centric AI Paradigms
+    13.1 Data-centric AI (data quality, labeling, curation)
+    13.2 Systems-centric AI (co-design of models, infrastructure, and operations)
+    13.3 AI-as-infrastructure and AI-as-a-platform paradigms[10][8]
+
+14. Emerging & Speculative Paradigms (Theoretical)
+    14.1 World model–centric intelligence
+    14.2 Open-endedness and artificial life paradigms
+    14.3 Brain-inspired and cognitively plausible architectures
+    14.4 Agency-centric / agentic AI paradigm (LLM-based agents, tool-using agents)[18][19]
+    14.5 Safety-first and alignment-first AI development paradigms[20][21]
+
+***
+
+## II. LEARNING & TRAINING PARADIGMS
+
+1. Supervised Learning
+   1.1 Classification
+   1.2 Regression
+   1.3 Structured prediction (sequence labeling, parsing, tagging)
+   1.4 Ranking and learning to rank
+   1.5 Multi-label learning
+   1.6 Ordinal regression
+
+2. Unsupervised Learning
+   2.1 Clustering (partitioning, hierarchical, density-based)
+   2.2 Dimensionality reduction (linear, nonlinear, manifold learning)
+   2.3 Density estimation
+   2.4 Generative modeling
+   2.5 Representation learning
+
+3. Self-Supervised Learning
+   3.1 Contrastive learning (instance discrimination, InfoNCE)
+   3.2 Masked prediction (masked language modeling, masked image modeling)
+   3.3 Auto-regressive self-supervision
+   3.4 Predictive coding and next-step prediction
+   3.5 Multi-view and cross-modal self-supervision[14][22]
+
+4. Semi-Supervised Learning
+   4.1 Consistency regularization
+   4.2 Pseudo-labeling and self-training
+   4.3 Graph-based semi-supervised learning
+   4.4 Co-training and multi-view semi-supervised methods
+
+5. Transfer Learning & Domain Adaptation
+   5.1 Inductive transfer learning
+   5.2 Transductive transfer learning
+   5.3 Domain adaptation (covariate shift, label shift)
+   5.4 Multi-domain learning
+   5.5 Domain generalization
+
+6. Multi-Task and Multi-Objective Learning
+   6.1 Hard parameter sharing
+   6.2 Soft parameter sharing
+   6.3 Task routing and dynamic task weighting
+   6.4 Multi-objective optimization and Pareto front learning
+
+7. Meta-Learning & Few-Shot Learning
+   7.1 Gradient-based meta-learning (e.g., MAML)
+   7.2 Metric-based meta-learning (prototypical networks, matching networks)
+   7.3 Model-based meta-learning (memory-augmented networks)
+   7.4 Hypernetwork-based meta-learning
+   7.5 In-context learning and prompt-based few-shot learning in LLMs[15][14]
+
+8. Continual, Lifelong & Curriculum Learning
+   8.1 Continual learning (catastrophic forgetting mitigation)
+   8.2 Lifelong learning with memory consolidation
+   8.3 Curriculum learning
+   8.4 Self-paced learning
+   8.5 Task sequencing and automatic curriculum generation
+
+9. Active & Interactive Learning
+   9.1 Pool-based active learning
+   9.2 Stream-based active learning
+   9.3 Membership query synthesis
+   9.4 Human-in-the-loop annotation and feedback
+
+10. Reinforcement Learning (RL) Paradigms
+    10.1 Value-based RL (Q-learning, SARSA)
+    10.2 Policy gradient methods
+    10.3 Actor-critic methods
+    10.4 Model-based RL
+    10.5 Offline / batch RL
+    10.6 Inverse RL and preference learning
+    10.7 Hierarchical RL (options, skills)
+    10.8 Multi-agent RL[7][6][8]
+    10.9 Safe and constrained RL (risk-sensitive, constrained MDPs)[21]
+
+11. Imitation & Demonstration Learning
+    11.1 Behavior cloning
+    11.2 Inverse reinforcement learning
+    11.3 Apprenticeship learning
+    11.4 Learning from demonstration (LfD) in robotics
+
+12. Generative Modeling & Generative Training Paradigms
+    12.1 Autoencoder-based training (AE, VAE, β-VAE)
+    12.2 Generative adversarial networks (GANs)
+    12.3 Normalizing flows
+    12.4 Diffusion and score-based generative models
+    12.5 Autoregressive generative modeling (tokens, pixels, audio)
+
+13. Large-Scale Pretraining & Foundation Model Training
+    13.1 Language model pretraining (causal, masked, encoder-decoder)
+    13.2 Vision pretraining (self-supervised, contrastive, masked image modeling)
+    13.3 Multimodal pretraining (contrastive, generative, joint embedding)[12][13][11][14][15]
+    13.4 Instruction tuning and alignment tuning
+    13.5 Mixture-of-experts pretraining and sparse activation[9][10]
+
+14. Federated & Distributed Learning
+    14.1 Federated averaging and local-update paradigms
+    14.2 Cross-device federated learning
+    14.3 Cross-silo federated learning
+    14.4 Federated multi-task learning
+    14.5 Federated reinforcement learning
+    14.6 Privacy-preserving and secure aggregation (PPML, cryptographic FL)[23]
+
+15. Privacy-Preserving & Secure Learning
+    15.1 Differentially private training (DP-SGD)
+    15.2 Homomorphic encryption–based learning
+    15.3 Secure multi-party computation–based learning
+    15.4 Trusted execution environments (TEE)-based learning
+    15.5 Hybrid PPML designs and verifiable PPML[23]
+
+16. Optimization & Training Procedures
+    16.1 First-order methods (SGD, momentum, Adam, etc.)
+    16.2 Second-order and quasi-Newton methods
+    16.3 Adaptive learning rate schedules and optimizers
+    16.4 Regularization (weight decay, dropout, stochastic depth)
+    16.5 Curriculum and data ordering strategies
+    16.6 Mixed-precision and low-precision training[24][25][9]
+
+17. Alignment-Oriented & Feedback-Based Training
+    17.1 Reinforcement learning from human feedback (RLHF)[21]
+    17.2 Reinforcement learning from AI feedback (RLAIF)[21]
+    17.3 Constitutional AI and rule-based supervision[21]
+    17.4 Multi-agent feedback and debate-based training
+    17.5 Self-correction and self-training loops in LLMs
+
+18. Emerging & Experimental Training Paradigms
+    18.1 World-model and planning-based training
+    18.2 Self-play and open-ended curriculum generation
+    18.3 Auto-architecting and neural architecture search with foundation models
+    18.4 Weight-sharing “supernet” and once-for-all training paradigms[26]
+
+***
+
+## III. MODEL ARCHITECTURE FAMILIES
+
+1. Linear & Generalized Linear Models
+   1.1 Linear regression
+   1.2 Logistic regression
+   1.3 Generalized linear models (GLM)
+
+2. Classical Machine Learning Models
+   2.1 Decision trees (CART, ID3, C4.5)
+   2.2 Random forests
+   2.3 Gradient boosting machines (GBM, XGBoost, LightGBM, CatBoost)
+   2.4 k-Nearest neighbors (k-NN)
+   2.5 Naive Bayes variants
+   2.6 Support vector machines (SVMs)
+   2.7 k-means and related clustering models
+   2.8 Gaussian mixture models (GMMs)
+   2.9 Hidden Markov models (HMMs)
+
+3. Feedforward Neural Network Architectures
+   3.1 Multilayer perceptrons (MLPs)
+   3.2 Deep fully connected networks
+   3.3 Residual MLPs and gated MLPs
+   3.4 Neural ODEs (continuous-depth networks)
+
+4. Convolutional Neural Network (CNN) Families
+   4.1 Classic CNNs (LeNet, AlexNet, VGG)
+   4.2 Residual networks (ResNet, ResNeXt)
+   4.3 Inception-style architectures
+   4.4 Dense connections (DenseNet)
+   4.5 Squeeze-and-Excitation & attention-augmented CNNs
+   4.6 Efficient architectures (MobileNet, ShuffleNet, EfficientNet)
+   4.7 3D CNNs and spatiotemporal CNNs for video
+   4.8 Vision backbone CNNs for detection and segmentation
+
+5. Recurrent & Sequence Models
+   5.1 Vanilla RNNs
+   5.2 LSTM networks
+   5.3 GRU networks
+   5.4 Bidirectional RNNs
+   5.5 Sequence-to-sequence (seq2seq) encoder–decoder RNNs
+   5.6 Attention-augmented RNNs
+   5.7 Temporal convolutional networks (TCNs)
+
+6. Transformer & Attention-Based Architectures
+   6.1 Encoder-only transformers (e.g., BERT)
+   6.2 Decoder-only transformers (GPT-style LLMs)[25][15]
+   6.3 Encoder–decoder transformers (e.g., T5, BART)
+   6.4 Vision transformers (ViT, Swin)
+   6.5 Multimodal transformers (vision-language, audio-text, video-text)[27][11][14]
+   6.6 Sparse attention and efficient transformers
+   6.7 Long-context transformers (memory-augmented, recurrence-augmented)
+   6.8 Mixture-of-experts transformers
+   6.9 State-space and SSM-inspired transformer variants
+
+7. Graph-Based Architectures
+   7.1 Graph convolutional networks (GCN)
+   7.2 Graph attention networks (GAT)
+   7.3 Message passing neural networks (MPNN)
+   7.4 Spatiotemporal graph neural networks
+   7.5 Heterogeneous graph neural networks
+   7.6 Graph transformers
+   7.7 Graph neural networks for microservice and cloud applications[28]
+
+8. Generative Model Architectures
+   8.1 Autoencoders (AEs)
+   8.2 Variational autoencoders (VAEs)
+   8.3 Denoising autoencoders
+   8.4 Generative adversarial networks (GANs) and variants
+   8.5 Normalizing flows (RealNVP, Glow)
+   8.6 Autoregressive models (PixelCNN, WaveNet, token LMs)
+   8.7 Diffusion models and score-based generative models
+   8.8 NeRF-based architectures for 3D and talking-head synthesis[29]
+
+9. Memory-Augmented Architectures
+   9.1 Neural Turing machines (NTM)
+   9.2 Differentiable neural computers (DNC)
+   9.3 Key-value memory networks
+   9.4 External memory–augmented transformers (e.g., KV cache strategies)
+   9.5 Episodic memory modules
+
+10. Multimodal & Cross-Modal Architectures
+    10.1 Joint embedding models (e.g., CLIP)[11][14]
+    10.2 Fusion architectures (early, late, hybrid fusion)
+    10.3 Unified multimodal token models (MIO, similar)[16]
+    10.4 Modular multimodal frameworks (e.g., mPLUG-2)[30][27]
+    10.5 Speech LLMs and audio-language architectures[17][31][32]
+    10.6 Video foundation models for understanding and generation[33][34]
+
+11. Time-Series, Signal & Control Architectures
+    11.1 Temporal convolution and attention models
+    11.2 Sequence models for forecasting
+    11.3 Control-oriented neural networks (NN-based controllers, policy networks)
+    11.4 Physics-informed neural networks (PINNs)
+
+12. Hybrid & Specialized Architectures
+    12.1 Neuro-symbolic hybrids
+    12.2 Differentiable programming frameworks
+    12.3 Neural program synthesizers and code LMs
+    12.4 World models (latent dynamics + decoder)
+    12.5 Planning neural architectures (LatPlan, neural planners)[35][36]
+
+13. Hardware-Aware & Efficient Architectures
+    13.1 Quantization-friendly architectures
+    13.2 Pruning-aware and sparse architectures
+    13.3 Compact networks for edge and TinyML (e.g., microcontroller-scale CNNs)[37][38]
+    13.4 Accelerator-tailored architectures (tensor-core, systolic-array–friendly)[24]
+
+14. Safety-, Interpretability- & Alignment-Oriented Architectures
+    14.1 Modular interpretable components (e.g., concept bottleneck models)
+    14.2 Architectures with disentangled representations
+    14.3 Models designed for mechanistic interpretability and modular circuits[39][20]
+
+***
+
+## IV. AGENT & AUTONOMOUS SYSTEM TAXONOMY
+
+1. Classical AI Agent Types
+   1.1 Simple reflex agents
+   1.2 Model-based reflex agents
+   1.3 Goal-based agents
+   1.4 Utility-based agents
+   1.5 Learning agents
+
+2. Planning-Based Agents
+   2.1 State-space planners (forward, backward, bidirectional)
+   2.2 Plan-space planners
+   2.3 Classical planning agents (STRIPS, PDDL)[5][40][3]
+   2.4 Hierarchical Task Network (HTN) planning agents[40][41][42]
+   2.5 Task and motion planning (TAMP) agents[36]
+
+3. BDI (Belief–Desire–Intention) Agents
+   3.1 Belief modeling and world models
+   3.2 Goal and intention management
+   3.3 Event–condition–action rules in BDI systems
+
+4. Reactive & Behavior-Based Agents
+   4.1 Subsumption architecture agents
+   4.2 Behavior-based robotics agents
+   4.3 Sensor–behavior mappings
+
+5. Model-Based RL Agents
+   5.1 World-model agents
+   5.2 Planning-RL hybrid agents
+   5.3 MPC-inspired RL agents
+
+6. Model-Free RL Agents
+   6.1 Value-based agents
+   6.2 Policy-gradient agents
+   6.3 Actor–critic agents
+   6.4 Hierarchical RL agents
+
+7. LLM-Based Single Agents (“Agentic LLMs”)
+   7.1 Single-tool LLM agents (direct function calling)
+   7.2 Multi-tool LLM agents (tool orchestration)
+   7.3 Planner–executor LLM agents (plan-and-execute, ReAct-style)
+   7.4 Reflective and self-correcting agents (self-critique loops)
+   7.5 Autonomous task-loop agents (e.g., AutoGPT-style patterns)
+   7.6 Agent “OS” and framework-based agents (e.g., LangGraph, AutoGen, Semantic Kernel, CrewAI)[19][18]
+
+8. Task-Specific Autonomous Systems
+   8.1 Autonomous navigation agents (mobile robots, drones)
+   8.2 Autonomous driving stacks
+   8.3 Industrial robots and manipulators
+   8.4 Conversational agents and dialogue systems
+   8.5 Recommendation and personalization agents
+
+9. Cognitive & Meta-Cognitive Agents
+   9.1 Agents with explicit reasoning modules (chain-of-thought, tree-of-thought)
+   9.2 Meta-learning agents that adapt internal policies
+   9.3 Self-modeling and self-monitoring agents
+
+10. Safety- and Alignment-Aware Agents
+    10.1 Agents with explicit safety constraints and shields
+    10.2 Human-in-the-loop controlled agents
+    10.3 Oversight-integrated agents (approval-based, debate-based)[21]
+
+***
+
+## V. MULTI-AGENT & COLLECTIVE INTELLIGENCE
+
+1. Multi-Agent System (MAS) Types
+   1.1 Cooperative MAS
+   1.2 Competitive MAS
+   1.3 Mixed-motive MAS
+   1.4 Decentralized vs centralized coordination[8]
+
+2. Multi-Agent Reinforcement Learning (MARL)
+   2.1 Fully cooperative MARL
+   2.2 Fully competitive (zero-sum) MARL
+   2.3 General-sum MARL
+   2.4 Centralized training with decentralized execution (CTDE)
+   2.5 Communication-augmented MARL
+
+3. Game-Theoretic & Mechanism Design Systems
+   3.1 Auction-based coordination
+   3.2 Market-based resource allocation
+   3.3 Contract net protocol
+   3.4 Cooperative game–theoretic coordination
+   3.5 Mechanism design for alignment in MAS[8][21]
+
+4. Swarm Intelligence & Collective Behavior
+   4.1 Ant-colony optimization collectives
+   4.2 Particle swarm collectives
+   4.3 Flocking and boids-based systems
+   4.4 Stigmergic systems and indirect communication
+
+5. Distributed AI and DAI-as-a-Service
+   5.1 Distributed problem solving (DPS)
+   5.2 Distributed optimization and consensus
+   5.3 Distributed AI as a Service (DAIaaS)[8]
+   5.4 Federated multi-agent learning
+
+6. LLM-Based Multi-Agent Systems (LLM-MAS)
+   6.1 Role-specialized agent teams (e.g., planner, executor, critic)[18]
+   6.2 Debate and adversarial collaboration systems
+   6.3 Simulation environments with generative agents (social simulations)
+   6.4 Multi-agent co-training and self-play for LLMs[18]
+   6.5 Multi-agent alignment and oversight systems[18][21]
+
+7. Collective Decision-Making Mechanisms
+   7.1 Voting and consensus protocols
+   7.2 Reputation and trust systems
+   7.3 Distributed ledger–backed coordination
+
+8. Blackboard, Shared-Memory & Publish–Subscribe Architectures
+   8.1 Blackboard-based coordination
+   8.2 Shared-memory MAS
+   8.3 Message-passing and pub–sub MAS
+
+***
+
+## VI. WORKFLOWS, PIPELINES & ORCHESTRATION PATTERNS
+
+1. Classical ML Pipelines
+   1.1 Data ingestion and preprocessing pipelines
+   1.2 Feature engineering and feature stores
+   1.3 Training, validation, and test pipelines
+   1.4 Model selection and hyperparameter tuning (AutoML)
+   1.5 Batch inference pipelines
+
+2. DAG-Based ML Workflows
+   2.1 Directed acyclic graph (DAG)–oriented pipelines (e.g., Airflow-style)
+   2.2 Workflow managers (Kubeflow, MLFlow, etc.)
+   2.3 Dataflow vs control-flow orchestration
+
+3. Continuous Integration / Continuous Delivery (CI/CD) for ML (MLOps)
+   3.1 Model build and test pipelines
+   3.2 Automated deployment workflows
+   3.3 Shadow, canary, and blue–green deployments[43][10]
+
+4. Foundation Model & LLM-Centric Workflows
+   4.1 Prompt-only workflows
+   4.2 Fine-tuning and adapter-based workflows
+   4.3 Retrieval-Augmented Generation (RAG) workflows
+       4.3.1 Classic RAG (retrieve-then-generate)
+       4.3.2 Iterative and feedback RAG
+       4.3.3 Hierarchical and graph-based RAG
+   4.4 Routing and model selection workflows (mixture-of-models serving)
+   4.5 Multi-stage generation pipelines (draft–refine, plan–generate–critique)[10][9]
+
+5. Orchestrated Agent Workflows
+   5.1 Planner–executor patterns (plan-first, then act)
+   5.2 ReAct and interleaved reasoning–acting patterns
+   5.3 Router–expert patterns (task routing to specialized agents)
+   5.4 Critic–refiner loops (self-evaluation and improvement)
+   5.5 Multi-agent orchestration for enterprise tasks (AutoGen, LangGraph, Semantic Kernel, CrewAI)[19][18]
+
+6. Data-Centric & Feedback Loops
+   6.1 Human feedback loops (labeling, rating, ranking)
+   6.2 Logging and telemetry-driven retraining
+   6.3 Continuous evaluation and regression detection
+
+7. Edge, Fog & Distributed Orchestration
+   7.1 Edge–cloud partitioning workflows[38][44][45][37]
+   7.2 Task offloading workflows (device → edge → cloud)
+   7.3 Resource-aware scheduling and orchestration
+
+8. Serverless & Event-Driven AI Workflows
+   8.1 Function-as-a-service inference chains[46][47]
+   8.2 Event-triggered model invocation
+   8.3 Auto-scaling and auto-provisioning patterns
+
+9. Governance-Aware Orchestration
+   9.1 Risk-tier–aware workflows (EU-style risk categorization)
+   9.2 Policy enforcement gates and approvals[48][21]
+   9.3 Audit logging and lineage tracking
+
+***
+
+## VII. TOOL USE, FUNCTION CALLING & PROGRAMMATIC CONTROL
+
+1. Direct Tool-Calling Paradigms
+   1.1 JSON-based function calling from LLMs
+   1.2 Schema-guided tool invocation
+   1.3 Toolformer-style self-supervised tool use
+
+2. Tool Abstraction & Cataloging
+   2.1 Tool registries and catalogs
+   2.2 Semantic tool descriptions and ontologies
+   2.3 API schema extraction and summarization
+
+3. Program Synthesis & Code Execution
+   3.1 Code generation for task automation
+   3.2 Code execution in sandboxes and notebooks
+   3.3 Program repair and refactoring agents
+
+4. External System Control
+   4.1 Operating system and file system tools
+   4.2 Database and knowledge store tools
+   4.3 Web browsing and HTTP API tools
+   4.4 Robotic and hardware control APIs
+
+5. Tool-Oriented Agent Architectures
+   5.1 Single-tool agents (fixed pipeline with one external function)
+   5.2 Multi-tool orchestrating agents
+   5.3 Hierarchical tool planners (tool planning trees)
+   5.4 Tool selection and routing strategies (bandit-based, heuristic, learned)
+
+6. Marketplace & Plugin Ecosystems
+   6.1 Model plugin ecosystems (e.g., application plugins)
+   6.2 Third-party tool marketplaces
+   6.3 Vertical-domain tool suites (finance, healthcare, security)
+
+7. Ambiguous Terms & Interpretations
+   7.1 MCP as “Model Context Protocol” (tool and resource registry & invocation protocol)
+   7.2 MCP as “Model Control Plane” (inference policy, routing, monitoring layer)
+   7.3 “Agent OS” as:
+       7.3.1 Agent runtime and orchestration kernel
+       7.3.2 Multi-agent operating environment
+       7.3.3 Tool routing and context management service[10][19]
+
+***
+
+## VIII. MEMORY, KNOWLEDGE & RETRIEVAL SYSTEMS
+
+1. In-Model & Architectural Memory
+   1.1 Implicit parametric memory (weights as knowledge)
+   1.2 Attention-based context memory (transformer context windows)
+   1.3 KV-cache and key–value memory optimization strategies[25][9][24]
+
+2. External Short-Term & Conversation Memory
+   2.1 Conversation history buffers
+   2.2 Summary-based memory compression
+   2.3 Episodic dialogue memory modules
+
+3. Long-Term Memory & Knowledge Stores
+   3.1 Vector databases and dense retrieval indices
+   3.2 Classical IR systems (BM25, inverted indices)
+   3.3 Hybrid retrieval (dense+lexical)
+   3.4 Semantic caches and response caches
+
+4. Knowledge Graphs & Ontologies
+   4.1 RDF graphs and triple stores
+   4.2 Property graphs
+   4.3 Domain ontologies and taxonomies
+   4.4 Knowledge graph embeddings
+   4.5 Knowledge graph–augmented reasoning in FMs[13][12][11]
+
+5. Symbolic Knowledge Representation
+   5.1 Frames and semantic networks
+   5.2 Description logics
+   5.3 Rule bases and Horn clauses
+   5.4 Probabilistic knowledge bases
+
+6. Differentiable & Neural Memory Systems
+   6.1 Neural Turing machines and differentiable memory[49]
+   6.2 Differentiable key–value memory
+   6.3 Product-key memory for large LMs
+
+7. Retrieval-Augmented Generation (RAG)
+   7.1 Query encoding and retrieval
+   7.2 Context selection and ranking
+   7.3 Chunking and document segmentation
+   7.4 Graph-structured RAG (knowledge graph or document graph RAG)
+   7.5 Multi-hop and iterative retrieval[50][51][14]
+
+8. Federated & Distributed Knowledge Systems
+   8.1 Federated knowledge bases
+   8.2 Distributed IR over heterogeneous sources
+   8.3 Knowledge synchronization and consistency
+
+9. Privacy-Preserving Knowledge & Memory
+   9.1 Partitioned public/private memory
+   9.2 Encrypted indices and retrieval
+   9.3 Access control–aware retrieval policies[52][23]
+
+***
+
+## IX. HUMAN-AI INTERACTION MODES
+
+1. Text-Based Interaction
+   1.1 Command-line interfaces with AI
+   1.2 Chat-based conversational UIs
+   1.3 Document-centric assistants (in-doc copilots)
+   1.4 Natural language query to databases and analytics
+
+2. Speech & Audio Interaction
+   2.1 Voice assistants and spoken dialogue systems
+   2.2 Speech-to-text and text-to-speech integration
+   2.3 Speech LLMs and unified speech–language models[31][32][17]
+
+3. Visual & Multimodal Interaction
+   3.1 Image-based querying and VQA
+   3.2 Document and chart understanding assistants
+   3.3 Multimodal chat (text+image+audio+video)[51][14][15]
+   3.4 Talking-head and avatar interfaces[29]
+
+4. Tangible & Haptic Interaction
+   4.1 Teleoperation interfaces
+   4.2 Haptic feedback in robotic control
+   4.3 Tangible user interfaces
+
+5. Collaborative & Co-Creative Interfaces
+   5.1 Code copilots and development assistants
+   5.2 Design and creative tools (image, video, audio creation)[34][53]
+   5.3 Writing and productivity assistants
+
+6. Mixed Reality & Immersive Interaction
+   6.1 AR/VR-based intelligence
+   6.2 Virtual environments with generative agents
+   6.3 Immersive storytelling with multi-agent and multimodal systems[53]
+
+7. Human Feedback & Control Channels
+   7.1 Rating, ranking, and preference-feedback interfaces
+   7.2 Inline correction and edit-based feedback
+   7.3 Oversight dashboards and control panels[21]
+
+8. Accessibility-Oriented AI Interfaces
+   8.1 Assistive technologies (screen readers, captioning)
+   8.2 Sign-language and gesture recognition interfaces
+
+9. Brain–Computer & Emerging Interaction Modes
+   9.1 Non-invasive brain signal decoding (EEG-based AI)
+   9.2 Speculative closed-loop brain–AI interfaces (emerging)
+
+***
+
+## X. EMBODIED AI & CYBER-PHYSICAL SYSTEMS
+
+1. Robotic Manipulation Systems
+   1.1 Industrial arm manipulators
+   1.2 Collaborative robots (cobots)
+   1.3 Dexterous hands and grippers
+
+2. Mobile Robotics
+   2.1 Ground robots (wheeled, legged)
+   2.2 Aerial robots (drones, UAVs)
+   2.3 Underwater and surface marine robots
+
+3. Autonomous Vehicles
+   3.1 Self-driving cars
+   3.2 Autonomous trucking
+   3.3 Autonomous public transport and shuttles
+
+4. Service & Social Robots
+   4.1 Domestic service robots
+   4.2 Healthcare and assistive robots
+   4.3 Socially interactive robots
+
+5. Task and Motion Planning (TAMP) Systems
+   5.1 Symbolic task planners coupled with motion planners[3][36]
+   5.2 Geometric and kinodynamic planning
+   5.3 Learned motion policies with safety constraints
+
+6. Cyber-Physical Systems (CPS)
+   6.1 Smart manufacturing and Industry 4.0 systems[52][8]
+   6.2 Smart grids and energy systems
+   6.3 Intelligent transportation systems
+   6.4 Building automation and smart infrastructure
+
+7. Human–Robot Interaction (HRI) Systems
+   7.1 Shared-autonomy interfaces
+   7.2 Intention recognition and prediction
+   7.3 Safety envelopes and proxemics
+
+8. IoT & Edge-Embedded Intelligence
+   8.1 TinyML embedded controllers[37][38]
+   8.2 Sensor fusion for embedded AI
+   8.3 Edge AI in distributed CPS[44][45]
+
+9. Digital Twins & Simulation-Based Embodied AI
+   9.1 Physics-based simulation environments
+   9.2 Digital twins of factories, cities, and infrastructure
+   9.3 Sim2real transfer and domain randomization
+
+***
+
+## XI. INFRASTRUCTURE, RUNTIME & SERVING ARCHITECTURES
+
+1. Training Infrastructure
+   1.1 Single-node GPU/TPU training
+   1.2 Data-parallel distributed training
+   1.3 Model-parallel and pipeline-parallel training
+   1.4 Parameter-server and all-reduce architectures
+   1.5 Mixed-precision and low-precision training pipelines[9][24][25]
+
+2. Inference & Serving Architectures
+   2.1 Monolithic model servers
+   2.2 Microservice-based AI systems[54][55][28]
+   2.3 Multi-tenant model serving
+   2.4 A/B testing and adaptive routing systems[43][10]
+   2.5 Heterogeneous model farms (varied size/latency/accuracy models)[43]
+
+3. Serverless & Function-as-a-Service Inference
+   3.1 Serverless ML inference platforms[47][46]
+   3.2 GPU-enabled serverless inference
+   3.3 Autoscaling and cold-start mitigation patterns
+
+4. Edge, Fog & On-Device Architectures
+   4.1 Edge-only inference (TinyML, microcontrollers)[38][37]
+   4.2 Edge–cloud split inference (early exit, feature offloading)[45][44]
+   4.3 Edge data centers and edge DC serving[45]
+
+5. Hardware Acceleration & Specialized Processors
+   5.1 GPUs and tensor-core architectures
+   5.2 TPUs and NPUs
+   5.3 FPGAs and reconfigurable accelerators
+   5.4 ASIC inference accelerators
+   5.5 In-/near-memory computing, analog accelerators, neuromorphic chips[24]
+
+6. Model Optimization for Deployment
+   6.1 Quantization (post-training, quantization-aware)
+   6.2 Pruning and sparsification
+   6.3 Knowledge distillation
+   6.4 Efficient architectures for resource-constrained devices[25][37][38][24]
+
+7. Observability, Monitoring & Governance Infrastructure
+   7.1 Telemetry and logging pipelines
+   7.2 Performance and SLO monitoring[46][43]
+   7.3 Drift detection and data quality monitoring
+   7.4 Incident management and feedback integration
+
+8. Foundation Model–Based System Architectures
+   8.1 FM-centric application architectures (FMs as central component)[10]
+   8.2 Hybrid FM+classical ML architectures
+   8.3 FM as a platform / AI OS designs
+   8.4 Responsible-AI-by-design architectural patterns[10][21]
+
+9. Distributed AI & DAI-as-a-Service Infrastructures
+   9.1 Distributed AI services for cross-organization use[8]
+   9.2 Industrial data–service–knowledge stacks (e.g., Trisk)[52]
+   9.3 Cross-layer governance-aware AI platforms[48][52]
+
+***
+
+## XII. EVALUATION, TESTING & VERIFICATION PARADIGMS
+
+1. Classical ML Evaluation
+   1.1 Train/validation/test splits and cross-validation
+   1.2 Standard metrics (accuracy, precision, recall, F1, AUC)
+   1.3 Regression metrics (MSE, MAE, R²)
+   1.4 Calibration and uncertainty estimation
+
+2. Generative Model Evaluation
+   2.1 Likelihood-based evaluation
+   2.2 Sample quality metrics (FID, IS, KID)
+   2.3 Text metrics (BLEU, ROUGE, METEOR, CIDEr)
+   2.4 Human evaluation protocols
+
+3. Foundation Model & LLM Benchmarks
+   3.1 General-language benchmarks (e.g., MMLU-style, reasoning suites)[15]
+   3.2 Multimodal benchmarks (e.g., MME, MMBench)[14][15]
+   3.3 Task-specific FM benchmarks (code, math, safety)
+
+4. Hallucination & Fidelity Evaluation
+   4.1 Factuality metrics and benchmarks[56][57][15]
+   4.2 Faithfulness and grounding measures
+   4.3 Multi-dimensional hallucination taxonomies and metrics[57][58]
+
+5. Robustness & Adversarial Testing
+   5.1 Adversarial example testing and robustness metrics
+   5.2 Distribution shift and OOD detection evaluation
+   5.3 Stress testing and red-teaming protocols[58][57]
+
+6. Safety & Alignment Evaluation
+   6.1 Harmful content and toxicity evaluation
+   6.2 Bias and fairness metrics
+   6.3 Alignment benchmarking suites and safety eval frameworks[57][58][21]
+
+7. Multi-Agent & Agentic System Evaluation
+   7.1 Task performance in multi-agent tasks[18][8]
+   7.2 Emergent cooperation and competition metrics
+   7.3 Strategic capabilities evaluation in LLM-MAS[18]
+
+8. Formal Verification & Certification
+   8.1 Formal verification of neural networks (reachability, robustness)
+   8.2 Runtime verification and monitoring
+   8.3 Certification standards and conformance testing (safety-critical AI)[48]
+
+9. System-Level Evaluation & Benchmarking
+   9.1 End-to-end latency, throughput, and cost benchmarks[59][46][43]
+   9.2 Edge vs cloud vs hybrid benchmark methodologies[44][59][37][45]
+   9.3 Energy efficiency and environmental impact metrics[38]
+
+10. Human-Centric & UX Evaluation
+    10.1 User satisfaction and usability studies
+    10.2 Human-in-the-loop system performance
+    10.3 Trust, interpretability, and mental-model alignment evaluation[20][39]
+
+***
+
+## XIII. SAFETY, ALIGNMENT & GOVERNANCE SYSTEMS
+
+1. Technical Alignment Approaches
+   1.1 RLHF (Reinforcement Learning from Human Feedback)[21]
+   1.2 RLAIF (Reinforcement Learning from AI Feedback)[21]
+   1.3 Constitutional AI and rule-based alignment[21]
+   1.4 Debate and deliberation-based alignment
+   1.5 Iterated amplification and distillation
+
+2. Oversight & Scalable Supervision Systems
+   2.1 Scalable oversight frameworks (weak-to-strong generalization)[21]
+   2.2 Tool-assisted oversight (LLMs as overseers)
+   2.3 Committee-of-models oversight and voting
+
+3. Interpretability & Mechanistic Understanding
+   3.1 Behavioral interpretability (probing, attribution)
+   3.2 Concept-based interpretability
+   3.3 Mechanistic interpretability (circuits, features, causal interventions)[39][20]
+   3.4 Mechanistic anomaly detection and Trojan detection[20][39]
+
+4. Robustness, Security & Adversarial Resilience
+   4.1 Adversarial training
+   4.2 Backdoor and Trojan detection
+   4.3 Model extraction and model stealing defense
+   4.4 Data poisoning detection and mitigation
+   4.5 Secure deployment and zero-trust AI architectures[23][52]
+
+5. Privacy & Confidentiality
+   5.1 Differential privacy (DP-SGD, DP mechanisms)[23]
+   5.2 Cryptographic PPML (HE, MPC, ZKPs)[23]
+   5.3 Confidential computing for AI workloads
+
+6. Responsible AI & Governance Frameworks
+   6.1 AI standards and landscape (NIST, ISO, IEEE, ETSI, etc.)[48]
+   6.2 AI risk management frameworks (e.g., NIST AI RMF)[48]
+   6.3 EU-style risk-tier classification (unacceptable, high, limited risk)
+   6.4 OECD and G20 AI principles
+
+7. Organizational Controls & Processes
+   7.1 AI governance committees and boards
+   7.2 Policy management and AI usage guidelines
+   7.3 Incident response and post-incident analysis workflows
+
+8. Documentation & Transparency Mechanisms
+   8.1 Model cards and system cards
+   8.2 Datasheets for datasets
+   8.3 Transparency reports for AI deployment
+
+9. Evaluation, Hallucination & Truthfulness Frameworks
+   9.1 Hallucination taxonomies and evaluation layers (e.g., LENS)[58][57]
+   9.2 Truthfulness and fact-checking toolchains
+   9.3 Mechanism-aware evaluation protocols[57]
+
+10. Multi-Agent & Societal-Scale Alignment
+    10.1 Cooperative AI and pluralistic alignment[8][21]
+    10.2 Multi-principal and multi-stakeholder alignment
+    10.3 Alignment in MAS and distributed AI settings[8][18]
+
+***
+
+## XIV. ECONOMIC, SOCIETAL & ORGANIZATIONAL PATTERNS
+
+1. AI in Organizations
+   1.1 Centralized AI platform teams
+   1.2 Federated and embedded AI teams
+   1.3 AI-as-a-service internal platforms[54][10][8]
+   1.4 Data–service–knowledge governance stacks (e.g., Trisk)[52]
+
+2. AI Productization & Business Models
+   2.1 SaaS AI products
+   2.2 API-based AI services (model endpoints)
+   2.3 Foundation Model as a Service (FMaaS)
+   2.4 Edge AI products and device intelligence[37][44][38]
+
+3. Labor, Skills & Organizational Transformation
+   3.1 Automation vs augmentation patterns
+   3.2 Copilot and assistant paradigms for knowledge work
+   3.3 Talent analytics and HR AI applications[60]
+
+4. Data & Knowledge Economy Structures
+   4.1 Data marketplaces and data-sharing ecosystems
+   4.2 Model marketplaces and FM hubs
+   4.3 Open-source vs proprietary AI ecosystems[61][9][10]
+
+5. Societal Impact & Ethics
+   5.1 Fairness, accountability, and transparency frameworks
+   5.2 Bias and discrimination mitigation
+   5.3 Digital divide and access inequalities
+
+6. Regulatory & Compliance Patterns
+   6.1 High-risk AI registration and conformity assessment
+   6.2 Sectoral regulations (healthcare, finance, public sector)
+   6.3 Cross-border data and AI governance[62][48]
+
+7. Industrial & Sectoral AI Patterns
+   7.1 Industry 4.0 / Industry 5.0 AI architectures[52][8]
+   7.2 Smart cities and infrastructure AI
+   7.3 AI in education, media, and creative industries
+
+8. Multi-Stakeholder & Multi-Level Governance
+   8.1 Public–private partnerships for AI
+   8.2 International standardization and harmonization efforts[48]
+   8.3 Civil-society and NGO participation in AI governance
+
+***
+
+## XV. EMERGING, EXPERIMENTAL & THEORETICAL FRONTiers
+
+1. Mechanistic Interpretability & Inner-Alignment Frontiers
+   1.1 Circuit-level feature dictionaries and automated interpretability[39][20]
+   1.2 Causal scrubbing and abstraction hierarchies[20]
+   1.3 Searching for “mesa-optimizers” and deceptive alignment[20][21]
+
+2. World Models & Generalist Agents
+   2.1 Unified multimodal world models (e.g., multimodal token models like MIO)[16]
+   2.2 Generalist agents over many tasks and environments
+   2.3 Simulation hypothesis and internal world modeling[20]
+
+3. Large Multimodal Model (MLLM) Frontiers
+   3.1 MLLMs with unified token spaces across text, image, audio, video[14][15][16]
+   3.2 Data-centric and interpretability-centric MLLM research[22][63][50]
+   3.3 Domain-specific multimodal FMs (e.g., remote sensing, pathology, medicine)[12][13][11]
+
+4. Speech & Audio-Centric Foundation Models
+   4.1 Speech LLMs integrating recognition, translation, and understanding[32][17][31]
+   4.2 Audio-token–based multimodal models[17][16]
+
+5. LLM-Based Multi-Agent & Society-Scale Simulations
+   5.1 Generative societies and social simulations using LLM agents[18]
+   5.2 Long-horizon strategic and economic simulations
+   5.3 Multi-agent alignment research via LLM-MAS[18][21]
+
+6. Distributed AI & Trusted Industrial Intelligence
+   6.1 Trusted industrial data–service–knowledge governance (Trisk)[52]
+   6.2 Cross-layer trust and governance for Industry 5.0[52][8]
+
+7. Resource-Efficient & Extreme-Scale AI
+   7.1 TinyML vs LLMs at extreme scales[38]
+   7.2 Efficient LLM inference and training (quantization, sparsity, compilation)[9][24][25]
+   7.3 Weight-sharing supernets and once-for-all architectures[26]
+
+8. Advanced Safety, Hallucination & Evaluation Research
+   8.1 Multi-layer hallucination evaluation frameworks (e.g., LENS)[58][57]
+   8.2 Mechanism-aware hallucination taxonomies across modalities[56][57]
+   8.3 New technical AI safety taxonomies (e.g., 2025 technical-safety taxonomies)[21]
+
+9. Privacy, Security & Cryptographic AI Frontiers
+   9.1 Verifiable PPML with zero-knowledge proofs[23]
+   9.2 Privacy-preserving multimodal FMs
+   9.3 Secure multi-party foundation model training
+
+10. New Architectures & Computational Substrates
+    10.1 Analog and neuromorphic architectures for deep and foundation models[24]
+    10.2 In-/near-memory computing architectures
+    10.3 Physics-inspired and quantum machine learning (where explicitly documented)
+
+11. Open Questions in AI Paradigms
+    11.1 AGI and superintelligence conceptualizations
+    11.2 CAIS (comprehensive AI services) vs unified-agent views
+    11.3 Long-term governance and global coordination frameworks[48][52][21]
+
+[1](https://indiaai.gov.in/article/exploring-constraint-satisfaction-problems)
+[2](https://www.geeksforgeeks.org/artificial-intelligence/constraint-satisfaction-problems-csp-in-artificial-intelligence/)
+[3](http://arxiv.org/pdf/2412.11642.pdf)
+[4](https://web.stanford.edu/class/cs227/Lectures/lec16.pdf)
+[5](https://web.engr.oregonstate.edu/~afern/classes/cs533/notes/strips-intro.pdf)
+[6](https://par.nsf.gov/servlets/purl/10078417)
+[7](https://arxiv.org/html/2502.09417v1)
+[8](https://www.sciencedirect.com/science/article/pii/S266730532300056X)
+[9](http://arxiv.org/pdf/2401.08092.pdf)
+[10](https://arxiv.org/pdf/2305.05352.pdf)
+[11](https://link.springer.com/10.1007/s10462-024-10915-y)
+[12](https://arxiv.org/abs/2503.09091)
+[13](https://www.mdpi.com/2072-4292/17/21/3532)
+[14](https://arxiv.org/pdf/2311.13165.pdf)
+[15](https://academic.oup.com/nsr/article/11/12/nwae403/7896414)
+[16](https://arxiv.org/html/2409.17692)
+[17](https://arxiv.org/html/2410.18908v3)
+[18](https://arxiv.org/html/2412.17481v2)
+[19](https://www.linkedin.com/posts/vishsrik_top-4-multi-agent-frameworks-you-need-to-activity-7351109453351456769-K47Z)
+[20](https://openreview.net/forum?id=ePUVetPKu6)
+[21](https://forum.effectivealtruism.org/posts/8k6qXNEogoHiBRsjA/technical-ai-safety-research-taxonomy-attempt-2025)
+[22](http://arxiv.org/pdf/2405.16640.pdf)
+[23](https://www.mdpi.com/2076-3417/16/1/277)
+[24](https://www.semanticscholar.org/paper/1c210a207aceee3430c78d91300dada979c4fd67)
+[25](https://ieeexplore.ieee.org/document/11247933/)
+[26](https://dl.acm.org/doi/10.1145/3759441.3759447)
+[27](https://arxiv.org/abs/2302.00402)
+[28](https://www.mdpi.com/1424-8220/22/23/9492/pdf?version=1670225693)
+[29](https://arxiv.org/abs/2507.02900)
+[30](http://arxiv.org/pdf/2302.00402v1.pdf)
+[31](https://openreview.net/forum?id=zBaUSjHr4O)
+[32](https://aclanthology.org/2025.acl-long.682.pdf)
+[33](https://arxiv.org/abs/2410.07405)
+[34](http://arxiv.org/pdf/2405.03770.pdf)
+[35](https://arxiv.org/pdf/2306.11434.pdf)
+[36](https://arxiv.org/pdf/2111.13144.pdf)
+[37](https://www.mdpi.com/2079-9292/14/24/4877)
+[38](https://ieeexplore.ieee.org/document/11281142/)
+[39](https://leonardbereska.github.io/blog/2024/mechinterpreview/)
+[40](http://www.cs.umd.edu/~nau/others-papers/alford2013search.pdf)
+[41](https://ojs.aaai.org/index.php/ICAPS/article/view/13765)
+[42](https://www.semanticscholar.org/paper/36bbff393e44c194412ea93a1bff7f1157f55ab5)
+[43](http://arxiv.org/pdf/2304.10892.pdf)
+[44](https://linkinghub.elsevier.com/retrieve/pii/S108480452300067X)
+[45](https://arxiv.org/html/2405.19213)
+[46](https://arxiv.org/abs/2311.13587)
+[47](https://arxiv.org/pdf/2311.13587.pdf)
+[48](https://zenodo.org/record/5011179/files/TWG-AI-Standards-Landscape0.pdf?download=1)
+[49](https://www.semanticscholar.org/paper/36a3f005135e78278747f24b99e1c3a726dfd0e0)
+[50](http://arxiv.org/pdf/2412.17759.pdf)
+[51](https://www.sciltp.com/journals/dmml/articles/2510001963)
+[52](https://www.semanticscholar.org/paper/3408f1b8872a22ddd35f5b3e88ba4c9b19715505)
+[53](https://arxiv.org/abs/2503.05242)
+[54](https://arxiv.org/pdf/2305.16092.pdf)
+[55](https://arxiv.org/pdf/2308.05833.pdf)
+[56](https://aclanthology.org/2024.findings-emnlp.685)
+[57](https://ieeexplore.ieee.org/document/11189137/)
+[58](https://ieeexplore.ieee.org/document/11189150/)
+[59](https://aaltodoc.aalto.fi/bitstreams/a26ada55-54df-4cdb-a392-d0372c127164/download)
+[60](https://arxiv.org/html/2307.03195v3)
+[61](https://www.turingpost.com/p/multimodal-resources)
+[62](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/06/oecd-artificial-intelligence-review-of-germany_c1c35ccf/609808d6-en.pdf)
+[63](https://arxiv.org/pdf/2412.02104.pdf)
+[64](https://jair.org/index.php/jair/article/view/16869)
+[65](https://ojs.aaai.org/index.php/AAAI/article/view/11117)
+[66](https://www.semanticscholar.org/paper/cc4c598ee25d33f82645efc7aa75796b96133653)
+[67](https://www.semanticscholar.org/paper/8b2b2d7476e11e650e301f29dcad22632523211d)
+[68](https://www.semanticscholar.org/paper/2d19115999a1e4a13ec060ce7338b57b1fad0b96)
+[69](https://link.springer.com/10.1007/978-3-319-19686-2_2)
+[70](https://www.semanticscholar.org/paper/63d887d600f5f16d7c728868eac6440f39bc780e)
+[71](https://arxiv.org/pdf/1605.05807.pdf)
+[72](https://arxiv.org/pdf/2001.11457.pdf)
+[73](http://arxiv.org/pdf/1810.09923.pdf)
+[74](https://arxiv.org/pdf/1106.0285.pdf)
+[75](https://arxiv.org/pdf/2301.11087.pdf)
+[76](https://www.kaggle.com/datasets/katerynameleshenko/ai-index)
+[77](https://unctad.org/system/files/official-document/tir2025_en.pdf)
+[78](https://www.linkedin.com/pulse/ai-index-2025-deep-dive-global-landscape-emanuele-canino-dnztf)
+[79](https://muens.io/minimax-and-mcts/)
+[80](https://aaai.org/papers/056-aaai96-056-combining-local-search-and-backtracking-techniques-for-constraint-satisfaction/)
+[81](https://ml-research.github.io/papers/truong2023monte.pdf)
+[82](https://conf.researchr.org/track/icse-2025/icse-2025-research-track)
+[83](https://arxiv.org/abs/2502.17516)
+[84](https://arxiv.org/abs/2306.09093)

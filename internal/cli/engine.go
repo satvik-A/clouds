@@ -17,9 +17,11 @@ import (
 	"strings"
 	"time"
 
+	tea "github.com/charmbracelet/bubbletea"
 	"github.com/cloudfs/cloudfs/internal/core"
 	"github.com/cloudfs/cloudfs/internal/model"
 	"github.com/cloudfs/cloudfs/internal/provider"
+	"github.com/cloudfs/cloudfs/internal/tui"
 )
 
 // Engine holds the CloudFS core components.
@@ -3321,3 +3323,21 @@ func getDirSize(path string) int64 {
 	})
 	return size
 }
+
+// RunTUI launches the Terminal User Interface
+func RunTUI() error {
+	// Check if CloudFS is initialized
+	cfgDir := getConfigDir()
+	if _, err := os.Stat(cfgDir); os.IsNotExist(err) {
+		return fmt.Errorf("CloudFS not initialized. Run 'cloudfs init' first")
+	}
+	
+	// Launch TUI with alternate screen buffer for clean exit
+	p := tea.NewProgram(tui.NewApp(), tea.WithAltScreen())
+	if _, err := p.Run(); err != nil {
+		return fmt.Errorf("TUI error: %w", err)
+	}
+	
+	return nil
+}
+

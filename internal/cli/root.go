@@ -79,6 +79,7 @@ func init() {
 	rootCmd.AddCommand(diagnosticsCmd)
 	rootCmd.AddCommand(overviewCmd)
 	rootCmd.AddCommand(destroyCmd)
+	rootCmd.AddCommand(tuiCmd)
 }
 
 // getConfigDir returns the configuration directory path.
@@ -765,4 +766,33 @@ This command is IRREVERSIBLE. No data is deleted from cloud providers.`,
 
 func init() {
 	destroyCmd.Flags().Bool("force", false, "Skip confirmation prompts")
+}
+
+// TUI command
+var tuiCmd = &cobra.Command{
+	Use:   "tui",
+	Short: "Launch interactive Terminal User Interface",
+	Long: `Launch the CloudFS Terminal User Interface (TUI).
+
+The TUI provides a full-featured, keyboard-driven interface for:
+  • Browsing and managing files
+  • Viewing provider status
+  • Managing archives and snapshots
+  • Monitoring journal and request queue
+  • Health monitoring and diagnostics
+
+Navigation:
+  1-9    Switch views
+  j/k    Move up/down
+  Enter  Select
+  ?      Help
+  q      Quit
+
+All operations respect CloudFS safety invariants:
+  • Dry-run previews for destructive actions
+  • Confirmation dialogs
+  • Journal-backed transactions`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		return RunTUI()
+	},
 }
